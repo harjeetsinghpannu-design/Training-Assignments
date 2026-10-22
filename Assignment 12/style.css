@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "adobe-clean";
+  src: url("https://use.typekit.net/af/cb695f/000000000000000000017701/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "adobe-clean", sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    padding: 17px 23px;
+    
+    background-color: rgb(162, 222, 128);
+}
+
+header h1{
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+body{
+    background-color: black;
+}
+
+main{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 40px;
+    /* outline: 2px solid red; */
+}
+
+.screen1-wrapper{
+    text-align: center;
+    opacity: 1; 
+    display: block; 
+    transition: opacity 0.3s ease-out; 
+}
+
+.screen1-wrapper h4{
+    margin: 0px 0px 50px 0px;
+}
+
+.shapes-wrapper{
+    display: flex;
+    gap: 50px;
+    margin: 0px 0px 30px 0px;
+}
+
+.tick-mark{
+    width: 40px;
+    opacity: 0;
+    transition: opacity 0.1s ease-out; 
+}
+
+.shapes-wrapper div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shape:hover{
+    cursor: pointer;
+}
+
+.circle{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #0b947d;
+}
+
+.triangle{
+    /* width: 0px;
+    height: 0px;
+    border-width: 0px 55px 110px 55px;
+    border-style: solid;
+    border-color: transparent transparent #E59CCC transparent; */
+    width: 110px;
+    height: 110px;
+    clip-path: polygon(50% 0%,0% 100%,100% 100%);
+    background-color: #E59CCC;
+}
+
+.square{
+    width: 110px;
+    height: 110px;
+    background-color: #C6C6C6;
+}
+
+.next-button{
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 30px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: bold; 
+    opacity: 0;
+    visibility: hidden; /*To ensure the button is not functional when hidden*/
+}
+
+.screen2-wrapper{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s ease-out; 
+}
+
+.screen2-wrapper input{
+    background-color: black;
+    border: 1.5px solid white;
+    color: white;
+    width: 500px;
+    height: 60px;
+    font-size: 30px;
+}
+
+.screen2-wrapper h4{
+    margin: 0px 0px 40px 0px;
+    font-weight: lighter;
+}
+
+.calc-button{
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 30px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calc-button:hover{
+    cursor: pointer;
+}
+
+span{
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    font-size: 13px;
+    vertical-align: top;
+    line-height: 32px ;
+    padding: 0px 0px 0px 5px;
+}
+
+span:nth-child(1){
+    background-color: #1E66CF;
+}
+
+span:nth-child(2){
+    background-color: #4F6A91;
+}
+
+span:nth-child(3){
+    background-color: #4184E5;
+}
+
+.screen3-wrapper{
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s ease-out; 
+    text-align: center;
+}
+
+.start-again{
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 30px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.start-again:hover{
+    cursor: pointer;
+}
+

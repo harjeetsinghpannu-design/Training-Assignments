@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.page-heading {
+    text-align: center;
+    color: #ffffff;
+    background-color: #43133e;
+    width: 100%;
+    line-height: 40px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.cover-image {
+    width: 100%;
+}
+
+.cover-image img {
+    width: 100%;
+}
+
+.place-cards-wrapper{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.place:nth-child(1), .place:nth-child(2), .place:nth-child(3){
+    margin-bottom: 50px;
+}
+
+.place{
+    margin: 20px 7px;
+    text-align: left;
+    width: 350px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.place-image img {
+    width: 100%;
+}
+
+.place-quote {
+    font-weight: 350;
+    font-size: 25px;
+    margin: 12px 0px 7px 0px;
+}
+
+.place-name {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.place-desc{
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 15px;
+}
+
+.read-more{
+    font-size: 13px;
+    color: #ffffff;
+    width: 110px;
+    height: 30px;
+    background-color: #7a1755;
+    border-style: none;
+}
+
+.read-more:hover{
+    opacity: 0.5;
+}
+
+.brand-story-wrapper{
+    text-align: center;
+}
+
+.brand-story-heading{
+    font-weight: 350;
+    font-size: 45px;
+    color: #840057;
+    margin-bottom: 20px;
+}
+
+.brand-story{
+    font-weight: 350;
+    text-align: justify;
+    margin: 0px 150px;
+    margin-bottom: 50px;
+    line-height: 25px;
+}
+
+.footer-wrapper{
+    font-size: 13px;
+    background-color: #7a1755;
+    text-align: left;
+    padding: 10px;
+}
+
+.copyright{
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+.footer-line{
+    color: #ffffff;
+    margin-left: 60px;
+    font-weight: 350;
+}
+
+
+
+
+
