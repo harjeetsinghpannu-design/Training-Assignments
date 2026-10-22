@@ -1,0 +1,299 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+a.head {
+    text-decoration: none;
+    display: flex;
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 80vw;
+    justify-content: right;
+    margin: auto;
+
+    /* a is an inline element, so it needes to be converted into a block element in order to apply text-align*/
+}
+
+a:hover {
+    color: #0000ff;
+    cursor: pointer;
+}
+
+.page {
+    min-height: 100vh;
+    width: 80vw;
+    margin: auto;
+}
+
+p.name {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+p.name span {
+    font-weight: bold;
+}
+
+p.role {
+    text-align: center;
+    font-size: 20px;
+    color: #c3c1c1;
+    margin-bottom: 30px;
+}
+
+p.role span {
+    color: #5485e1;
+
+}
+
+a.inside {
+    text-decoration: none;
+    display: flex;
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 80vw;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 60px;
+    display: none;
+}
+
+.images {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+div.image {
+    width: calc((100% - 30px) / 3);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.brandtag p {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #c3c1c1;
+}
+
+div.brandtag p span {
+    color: #90ee90;
+}
+
+.brands {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+div.brand>img {
+    width: 100%;
+    height: auto;
+}
+
+.footerline {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.part1 {
+    width: 2%;
+    height: 1px;
+    background-color: #ffffff;
+}
+
+.part2 {
+    width: 25%;
+    height: 1px;
+    background-color: #ffffff;
+}
+
+.medialinks {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.media {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media:hover {
+    transform: scale(1.2);
+    cursor: pointer
+}
+
+.facebook:hover {
+    background-color: #0000ff;
+}
+
+.twitter:hover {
+    background-color: #87ceeb;
+}
+
+.insta:hover {
+    background-color: #d87093;
+}
+
+.dribbble:hover {
+    background-color: #ff69b4;
+}
+
+.medium:hover {
+    background-color: #a52a2a;
+}
+
+.endline {
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+@media only screen and (max-width:768px) {
+
+    /*Tablet*/
+    a.head {
+        width: 95vw;
+    }
+
+    .page {
+        width: 95vw;
+    }
+
+    .images {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    div.image {
+        width: calc((100% - 15px) / 2);
+    }
+
+    .image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .brands {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        flex-wrap: wrap;
+    }
+
+    .brand {
+        width: calc((100% - 200px) / 3);
+    }
+
+    .brand img {
+        width: 80%;
+        height: auto;
+    }
+
+    p.name {
+        font-size: 36px;
+    }
+
+    p.role {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width:474px) {
+    a.inside {
+        text-align: center;
+        display: block;
+    }
+
+    a.inside:hover {
+        color: #0000ff;
+    }
+
+    p.name {
+        font-size: 50px;
+    }
+
+    p.role {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    a.inside {
+        display: block;
+        font-size: 14px;
+    }
+
+    a.head {
+        visibility: hidden;
+    }
+
+    .images {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.image {
+        width: 100%;
+        height: 100%;
+    }
+
+    div.brandtag p {
+        font-size: 30px;
+    }
+
+    .brands {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        flex-wrap: wrap;
+    }
+
+    .brand {
+        width: calc((100% - 100px)/2);
+    }
+
+    .media {
+        width: 70px;
+        height: 70px;
+    }
+
+    .media i {
+        font-size: 45px;
+    }
+
+    .endline {
+        font-size: 14px;
+    }
+
+}
