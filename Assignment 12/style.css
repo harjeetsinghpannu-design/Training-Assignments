@@ -34,6 +34,7 @@ main{
     align-items: center;
     height: 500px;
     font-size: 40px;
+    margin: 80px 0px 0px 0px;
     /* outline: 2px solid red; */
 }
 
@@ -46,6 +47,7 @@ main{
 
 .screen1-wrapper h4{
     margin: 0px 0px 50px 0px;
+    font-weight: lighter;
 }
 
 .shapes-wrapper{
@@ -70,14 +72,14 @@ main{
     cursor: pointer;
 }
 
-.circle{
+.Circle{
     width: 110px;
     height: 110px;
     border-radius: 50%;
     background-color: #0b947d;
 }
 
-.triangle{
+.Triangle{
     /* width: 0px;
     height: 0px;
     border-width: 0px 55px 110px 55px;
@@ -89,7 +91,7 @@ main{
     background-color: #E59CCC;
 }
 
-.square{
+.Square{
     width: 110px;
     height: 110px;
     background-color: #C6C6C6;
@@ -154,29 +156,35 @@ span{
     display: inline-block;
     width: 100px;
     height: 32px;
-    font-size: 13px;
+    font-size: 16px;
     vertical-align: top;
     line-height: 32px ;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 10px;
+    text-align: left;
 }
 
 span:nth-child(1){
     background-color: #1E66CF;
+    width: 140px;
 }
 
 span:nth-child(2){
     background-color: #4F6A91;
+    width: 90px;
 }
 
 span:nth-child(3){
     background-color: #4184E5;
+    width: 100px;
 }
 
 .screen3-wrapper{
     opacity: 0;
     display: none;
-    transition: opacity 0.3s ease-out; 
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-out;
 }
 
 .start-again{
@@ -194,4 +202,16 @@ span:nth-child(3){
 .start-again:hover{
     cursor: pointer;
 }
+
+#chosen-shape{
+    margin: 0px 0px 30px 0px;
+}
+
+.chosen-shape-name{
+    margin: 0px 0px 10px 0px;
+    font-weight: lighter
+}
+
+
+
 

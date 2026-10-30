@@ -1,7 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
 }
 
 .page{
@@ -16,8 +20,9 @@ header{
     color: #ffffff;
 }
 
-header h5{
-    font-weight: lighter;
+header h1{
+    font-weight: 500;
+    font-size: 15px;
 }
 
 main{
@@ -29,6 +34,7 @@ main{
 .left-channel-wrapper{
     max-width: 700px;
     float: left;
+    /* clear: right; */
 }
 
 .right-channel-wrapper{
@@ -38,16 +44,17 @@ main{
 
 .channel{
     text-align: justify;
-    border: 1px solid #1E669A;
+    border: 1px solid #145f94;
     margin: 15px 0px;
-    box-sizing: border-box;
+    background-color: #f6f6f6;
 }
 
 .channel-head{
     background-color: #145f94;
     padding: 10px 17px;
     color: #ffffff;
-    font-weight: lighter;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .content{
