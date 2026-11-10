@@ -55,7 +55,7 @@ next.addEventListener("click", () => {
     }, 300);
     let selected_shape = localStorage.getItem("selected_shape");
     localStorage.setItem("current_screen", "2");
-    screen2_title.textContent = shape_prop[selected_shape].title;
+    screen2_title.textContent = "2. " + shape_prop[selected_shape].title;
 })
 
 input.addEventListener("input", () => {

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+header{
+    background-color: #3b1c67;
+    position: relative;
+}
+
+header h1{
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px;
+    color: white;
+}
+
+.add-btn{
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    border-style: none;
+}
+
+.dialog{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.friends-list-wrapper{
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    width: fit-content;
+}
+
+.friend-card{
+    background-color: #4d66b4;
+    width: 360px;
+    height: 55px;
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-weight: 100;
+}
+
+.friend-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.friend-name{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.friend-email{
+    font-size: 10px;
+}

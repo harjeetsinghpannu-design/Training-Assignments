@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 14</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="Sirius_Logo.svg" alt="Sirius-Logo" />
+    </header>
+    <main>
+        <form class="payment-form" action="GET">
+            <h2>BILLING DETAILS</h2>
+            <div class="user-name">
+                <div class="first-name">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" />
+                    <p class="first-name-error"></p>
+                </div>
+                <div class="last-name">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" />
+                    <p class="last-name-error"></p>
+                </div>
+            </div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" />
+            <p class="email-error"></p>
+            <label for="contact">Contact Number</label>
+            <input type="tel" id="contact" />
+            <p class="contact-error"></p>
+            <label for="pin">PIN Code</label>
+            <input type="number" id="pin" />
+            <p class="pin-error"></p>
+
+            <h2>PAYMENT DETAILS</h2>
+
+            <label for="card-number">Card Number</label>
+            <input type="number" id="card-number" />
+            <p class="card-number-error"></p>
+            <div class="card-details">
+                <div class="card-expiry">
+                    <label for="card-expiry">Card Expiry (Year)</label>
+                    <input type="number" id="card-expiry" />
+                    <p class="card-expiry-error"></p>
+                </div>
+                <div class="CVV">
+                    <label for="cvv">CVV</label>
+                    <input type="number" id="cvv" />
+                    <p class="cvv-error"></p>
+                </div>
+            </div>
+            <button class="complete-payment">COMPLETE PAYMENT</button>
+        </form>
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>

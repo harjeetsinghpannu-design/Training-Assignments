@@ -6,6 +6,9 @@
 *{
     margin: 0;
     padding: 0;
+}
+
+body{
     font-family: "adobe-clean", sans-serif;
 }
 
@@ -21,6 +24,7 @@ header{
 header h1{
     letter-spacing: 1px;
     font-size: 15px;
+    font-weight: 300;
 }
 
 body{
@@ -42,7 +46,7 @@ main{
     text-align: center;
     opacity: 1; 
     display: block; 
-    transition: opacity 0.3s ease-out; 
+    transition: opacity 0.1s ease-out; 
 }
 
 .screen1-wrapper h4{
@@ -80,11 +84,6 @@ main{
 }
 
 .Triangle{
-    /* width: 0px;
-    height: 0px;
-    border-width: 0px 55px 110px 55px;
-    border-style: solid;
-    border-color: transparent transparent #E59CCC transparent; */
     width: 110px;
     height: 110px;
     clip-path: polygon(50% 0%,0% 100%,100% 100%);
@@ -119,7 +118,7 @@ main{
     gap: 15px;
     opacity: 0;
     display: none;
-    transition: opacity 0.3s ease-out; 
+    transition: opacity 0.1s ease-out; 
 }
 
 .screen2-wrapper input{
@@ -184,19 +183,20 @@ span:nth-child(3){
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.3s ease-out;
+    transition: opacity 0.1s ease-out;
 }
 
 .start-again{
     background-color: transparent;
     border: 1.5px solid white;
     color: white;
-    width: 150px;
+    width: 170px;
     height: 40px;
     border-radius: 3px;
     margin: 30px 0px 0px 0px;
     font-size: 20px;
     font-weight: bold;
+    padding: 0px 20px;
 }
 
 .start-again:hover{

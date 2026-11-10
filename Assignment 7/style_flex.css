@@ -17,8 +17,6 @@ a.head {
     width: 80vw;
     justify-content: right;
     margin: auto;
-
-    /* a is an inline element, so it needes to be converted into a block element in order to apply text-align*/
 }
 
 a:hover {

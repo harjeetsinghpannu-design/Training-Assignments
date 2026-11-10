@@ -15,10 +15,12 @@ body {
 header {
     display: flow-root;
     margin-bottom: 40px;
+    position: relative;
 }
 
 nav {
-    float: right;
+    position: absolute;
+    right: 0;
     font-weight: bold;
 }
 
@@ -50,7 +52,7 @@ nav {
     font-size: 14px;
     visibility: hidden;
     position: absolute;
-    right: 100px;
+    right: 0px;
     z-index: 1;
 }
 
@@ -85,13 +87,6 @@ nav:hover .dropdown {
 .product:nth-child(4n) {
     margin-right: 0px;
 }
-
-/* .product:nth-child(1),
-.product:nth-child(2),
-.product:nth-child(3),
-.product:nth-child(4) {
-    margin-bottom: 40px;
-} */
 
 .prod-img {
     height: 300px;
@@ -189,13 +184,6 @@ footer {
     left: 0;
     width: 100%;
 }
-
-/* .product:nth-child(5),
-.product:nth-child(6),
-.product:nth-child(7),
-.product:nth-child(8) {
-    margin-bottom: 100px;
-} */
 
 .footer-wrapper li {
     list-style: none;
