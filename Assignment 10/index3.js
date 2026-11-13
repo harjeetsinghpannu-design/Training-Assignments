@@ -14,12 +14,12 @@ const todate=()=>{
 todate();
 
 let inp=Number(prompt("Enter the degree Fahrenheit value: "));
-const celtofar=()=>{
-    far=(9/5)*inp+32;
+const celtofar=(cel)=>{
+    far=(9/5)*cel+32;
     console.log(`Fahrenheit value: ${far}°F`);
 }
 
-celtofar()
+celtofar(inp)
 
 let arr=prompt("Enter the Array with comma separated values: ").split(",").map(n=>Number(n));
 console.log(arr);
@@ -42,15 +42,20 @@ console.log(`Average of the given array is: ${avg(arr)}`);
 
 let str=prompt("Enter the string: ");
 
-const rev=(str)=>{
-    let revstr="";
-    for(let i=str.length-1;i>=0;i--){
-        revstr+=str[i];
-    }
-    return revstr;
-}
+// const rev=(str)=>{
+//     var revstr="";
+//     for(let i=str.length-1;i>=0;i--){
+//         revstr+=str[i];
+//     }
+//     return revstr;
+// }
+// console.log(rev(str));
 
-console.log(rev(str));
+const rev=str.split("").reverse().join("");
+
+
+console.log(rev);
+
 
 // const rev=(str)=>{
 //     let revarr=new Array();
@@ -59,5 +64,3 @@ console.log(rev(str));
 //     }
 //     return revarr.join("");
 // }
-
-// console.log(rev(str))
