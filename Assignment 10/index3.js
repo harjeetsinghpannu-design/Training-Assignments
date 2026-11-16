@@ -1,3 +1,5 @@
+//@ts-check
+
 const disp=()=>{
     for(let i=1;i<=100;i++){
         console.log(i);
@@ -14,12 +16,22 @@ const todate=()=>{
 todate();
 
 let inp=Number(prompt("Enter the degree Fahrenheit value: "));
+
+/**
+ * Converts temperature from degree celsius to degree farhenheit
+ * @param {number} cel - temperature in degree celsius
+ * @returns {number} - temperature in degree farhenheit
+ * @example
+ * celtofar(35)
+ */
+
 const celtofar=(cel)=>{
-    far=(9/5)*cel+32;
-    console.log(`Fahrenheit value: ${far}°F`);
+    return (9/5)*cel+32;
 }
 
-celtofar(inp)
+var far_temp=celtofar("hello");
+
+console.log(`Fahrenheit value: ${far_temp}°F`);
 
 let arr=prompt("Enter the Array with comma separated values: ").split(",").map(n=>Number(n));
 console.log(arr);
@@ -52,7 +64,6 @@ let str=prompt("Enter the string: ");
 // console.log(rev(str));
 
 const rev=str.split("").reverse().join("");
-
 
 console.log(rev);
 

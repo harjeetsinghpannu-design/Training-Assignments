@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -8,7 +9,7 @@ body{
 }
 
 
-.back-img{
+/* .back-img{
     background-image: url("assets/background-image.png");
     min-height: 100vh;
     background-size: cover;
@@ -18,6 +19,18 @@ body{
     height: 100%;
     z-index: -1;
     background-position: 10% 10%;
+} */
+
+
+.back-img {
+    position: fixed;
+    inset: 0;
+    background-image: url("assets/background-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 25%;
+    filter: brightness(0.8);
+    z-index: -1;
 }
 
 .page{
@@ -63,13 +76,12 @@ header{
 }
 
 .menu:hover{
-    cursor: pointer;;
+    cursor: pointer;
 }
 
 .hat-icon{
-    margin: 10px;
-    width: 80px;
-    height: 80px;
+    margin: 20px;
+    width: 70px;
 }
 
 .menu-dropdown{
@@ -83,10 +95,6 @@ header{
     opacity: 0;
     visibility: hidden;
     transition: transform 1s ease, opacity 1s ease;
-}
-
-.menu-dropdown ul{
-    padding: 0px 3px;
 }
 
 .menu-dropdown li{
@@ -135,10 +143,24 @@ footer{
 .logo{
     width: 30px;
     height: 30px;
+    transition: transform 0.2s ease-out;
 }
 
 .logo i{
     font-size: 25px;
+}
+
+.logo:hover{
+    cursor: pointer;
+    transform:scale(1.2);
+}
+
+.facebook:hover{
+    color: #0000ff;
+}
+
+.twitter:hover{
+    color: #87ceeb;
 }
 
 
