@@ -27,8 +27,8 @@ let cvv_regex = /^\d{3,4}$/
 
 function error_message(error, input, message) {
     error.textContent = message;
-    error.style.color = "red";
-    input.style.border = "1px solid red";
+    error.style.color = "#a51818";
+    input.style.border = "1px solid #a51818";
 }
 
 function clear_error(error, input) {
@@ -52,7 +52,7 @@ function validateExpiry(error, input, message, regex) {
     let todate = new Date();
     let year = todate.getFullYear();
     console.log(year);
-    
+
     if (input.value === "") {
         error_message(error, input, `${message} is required`);
     }
@@ -73,7 +73,7 @@ complete_button.addEventListener("click", () => {
     validate(pin_error, pin, "PIN Code", pin_regex);
     validate(card_number_error, card_number, "Card Number", card_num_regex);
     validateExpiry(card_expiry_error, card_expiry, "Card Expiry", card_expiry_regex);
-    validate(cvv_error, cvv, "Card Number", cvv_regex);
+    validate(cvv_error, cvv, "CVV", cvv_regex);
 })
 
 // || !(name_regex.test(first_name))
