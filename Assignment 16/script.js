@@ -104,7 +104,6 @@ function startTransaction(){
 }
 
 const bank=bankAccount();
-
 let continueTransaction=true;
 
 while(continueTransaction){
@@ -115,7 +114,6 @@ while(continueTransaction){
         console.log(error.message);
         alert(error.message);
     }
-
     continueTransaction=confirm(
         "Would you like to access the banking portal again?"
     );
