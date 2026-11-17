@@ -1,55 +1,55 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.page{
+.page {
     text-align: center;
 }
 
 
-header{
+header {
     margin-bottom: 5px;
     background-color: #145f94;
     padding: 20px;
     color: #ffffff;
 }
 
-header h1{
+header h1 {
     font-weight: 500;
     font-size: 15px;
 }
 
-main{
+main {
     display: flow-root;
     margin: auto;
     max-width: 1115px;
 }
 
-.left-channel-wrapper{
+.left-channel-wrapper {
     max-width: 700px;
     float: left;
     /* clear: right; */
 }
 
-.right-channel-wrapper{
+.right-channel-wrapper {
     max-width: 400px;
     float: right;
 }
 
-.channel{
+.channel {
     text-align: justify;
     border: 1px solid #145f94;
     margin: 15px 0px;
     background-color: #f6f6f6;
 }
 
-.channel-head{
+.channel-head {
     background-color: #145f94;
     padding: 10px 17px;
     color: #ffffff;
@@ -57,28 +57,8 @@ main{
     font-size: 14px;
 }
 
-.content{
+.content {
     font-size: 12px;
     padding: 17px;
     line-height: 17px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

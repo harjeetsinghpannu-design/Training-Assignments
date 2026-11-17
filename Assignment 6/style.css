@@ -1,5 +1,5 @@
-:root{
-    --footer-height:80px;
+:root {
+    --footer-height: 80px;
 }
 
 * {
@@ -52,7 +52,6 @@ nav {
 .dropdown {
     background-color: #eeeeee;
     width: 150px;
-    height: 100px;
     padding: 20px;
     line-height: 25px;
     font-size: 14px;
@@ -206,7 +205,8 @@ footer {
     .product {
         width: calc((100% - 36px)/3);
     }
-    .product:nth-child(4n){
+
+    .product:nth-child(4n) {
         margin-right: 18px;
     }
 
@@ -234,6 +234,7 @@ footer {
     .product {
         width: 100%;
     }
+
     .product:nth-child(2n) {
         margin-right: 18px;
     }

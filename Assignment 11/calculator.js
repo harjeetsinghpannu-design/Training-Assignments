@@ -18,13 +18,13 @@ function startCalc() {
     let num1 = Number(prompt("Enter the first number: "));
     let num2 = Number(prompt("Enter the second number: "));
     let op = prompt("Enter the operation to be performed (add,sub,div,mul,pow): ");
-    return{num1, num2, op}
+    return { num1, num2, op }
 }
 
 let continueCalc = true;
 
 while (continueCalc) {
-    input=startCalc();
+    input = startCalc();
     if (!(input.op in calculator)) {
         alert("Invalid Operation. Enter a valid operation to proceed.");
     }

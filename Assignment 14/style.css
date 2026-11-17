@@ -18,11 +18,11 @@ header {
     text-align: center;
 }
 
-label{
+label {
     font-size: 8px;
 }
 
-.error-message{
+.error-message {
     font-size: 8px;
 }
 
@@ -44,12 +44,12 @@ main {
     /* text-align: center; */
 }
 
-h2{
+h2 {
     color: #001b71;
     margin: 7px 0px;
 }
 
-.heading-2{
+.heading-2 {
     padding-top: 20px;
 }
 
@@ -67,7 +67,7 @@ input {
     border-radius: 3px;
 }
 
-.input-wrapper{
+.input-wrapper {
     margin: 7px 0px;
 }
 

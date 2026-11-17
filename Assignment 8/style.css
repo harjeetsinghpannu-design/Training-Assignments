@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -33,13 +33,13 @@ body{
     z-index: -1;
 }
 
-.page{
+.page {
     color: #ffffff;
     text-align: center;
     position: relative;
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     font-size: 25px;
@@ -47,23 +47,23 @@ header{
     margin-bottom: 300px;
 }
 
-.estab{
+.estab {
     position: absolute;
     top: 80px;
     right: 15px;
     width: 300px;
     text-align: center;
-    transform: rotate(-90deg) translate(-50px,100px);
+    transform: rotate(-90deg) translate(-50px, 100px);
     color: #ffffff;
     font-size: 30px;
     font-weight: bold;
 }
 
-.estab span{
+.estab span {
     font-size: 70px;
 }
 
-.menu{
+.menu {
     position: absolute;
     height: 50px;
     width: 50px;
@@ -76,15 +76,15 @@ header{
     align-items: center;
 }
 
-.menu:hover{
+.menu:hover {
     cursor: pointer;
 }
 
-.hat-icon{
+.hat-icon {
     width: 70px;
 }
 
-.menu-dropdown{
+.menu-dropdown {
     padding: 30px 0px 0px 0px;
     position: absolute;
     top: 50px;
@@ -99,31 +99,31 @@ header{
     transition: transform 1s ease, opacity 1s ease;
 }
 
-.menu-dropdown li{
+.menu-dropdown li {
     list-style: none;
     margin: 18px 0px;
 }
 
-.menu .line{
+.menu .line {
     height: 2px;
     width: 20px;
     background-color: #ffffff;
     border-radius: 3px;
 }
 
-.menu:hover .menu-dropdown{
+.menu:hover .menu-dropdown {
     opacity: 1;
     transform: translateX(30%);
     visibility: visible;
 }
 
-.menu:hover .menu-dropdown:hover li:hover{
+.menu:hover .menu-dropdown:hover li:hover {
     cursor: pointer;
     background-color: #ffffff;
     color: #000000;
 }
 
-.brand-quote{
+.brand-quote {
     font-size: 70px;
     font-weight: bold;
     position: absolute;
@@ -131,12 +131,12 @@ header{
     top: 455px;
 }
 
-.brand-quote span{
+.brand-quote span {
     display: block;
     font-size: 95px;
 }
 
-footer{
+footer {
     position: absolute;
     top: 630px;
     display: flex;
@@ -145,27 +145,25 @@ footer{
     bottom: 15px;
 }
 
-.logo{
+.logo {
     width: 30px;
     height: 30px;
     transition: transform 0.2s ease-out;
 }
 
-.logo i{
+.logo i {
     font-size: 25px;
 }
 
-.logo:hover{
+.logo:hover {
     cursor: pointer;
-    transform:scale(1.2);
+    transform: scale(1.2);
 }
 
-.facebook:hover{
+.facebook:hover {
     color: #0000ff;
 }
 
-.twitter:hover{
+.twitter:hover {
     color: #87ceeb;
 }
-
-

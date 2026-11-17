@@ -70,51 +70,51 @@ function bankAccount() {
     };
 }
 
-function startTransaction(){
-    const cardNo=prompt("Enter Card Number:");
-    const pin=prompt("Enter Account PIN:");
-    const operation=prompt("Enter operation to be performed (withdraw/deposit):").toLowerCase();
+function startTransaction() {
+    const cardNo = prompt("Enter Card Number:");
+    const pin = prompt("Enter Account PIN:");
+    const operation = prompt("Enter operation to be performed (withdraw/deposit):").toLowerCase();
 
-    if(operation!=="withdraw"&&operation!=="deposit"){
+    if (operation !== "withdraw" && operation !== "deposit") {
         throw Error("Invalid operation. Enter a valid operation");
     }
 
-    const amount=Number(prompt(`Enter amount to ${operation}:`));
+    const amount = Number(prompt(`Enter amount to ${operation}:`));
 
-    if(Number.isNaN(amount)){
+    if (Number.isNaN(amount)) {
         throw Error("Please enter a valid amount");
     }
 
-    if(amount<=0){
+    if (amount <= 0) {
         throw Error(`Can't ${operation} zero or negative amount.`);
     }
 
     let updatedBalance;
 
-    if(operation==="withdraw"){
-        updatedBalance=bank.withdraw(cardNo,pin,amount);
+    if (operation === "withdraw") {
+        updatedBalance = bank.withdraw(cardNo, pin, amount);
         // console.log(`Amount has been withdrawn. Current balance is ${updatedBalance}`);
         alert(`Amount has been withdrawn. Current balance is ${updatedBalance}`);
     }
-    else{
-        updatedBalance=bank.deposit(cardNo,pin,amount);
+    else {
+        updatedBalance = bank.deposit(cardNo, pin, amount);
         // console.log(`Amount has been deposited. Current balance is ${updatedBalance}`);
         alert(`Amount has been deposited. Current balance is ${updatedBalance}`);
     }
 }
 
-const bank=bankAccount();
-let continueTransaction=true;
+const bank = bankAccount();
+let continueTransaction = true;
 
-while(continueTransaction){
-    try{
+while (continueTransaction) {
+    try {
         startTransaction();
     }
-    catch(error){
+    catch (error) {
         console.log(error.message);
         alert(error.message);
     }
-    continueTransaction=confirm(
+    continueTransaction = confirm(
         "Would you like to access the banking portal again?"
     );
 }

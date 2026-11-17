@@ -1,4 +1,4 @@
-let play_arr=["Rahul", "Sachin", "Abhishek", "Sunil", "Virat", "Shikhar", "Ravichandran", "Kuldeep", "Suryakumar", "Shivam", "Rohit"];
+let play_arr = ["Rahul", "Sachin", "Abhishek", "Sunil", "Virat", "Shikhar", "Ravichandran", "Kuldeep", "Suryakumar", "Shivam", "Rohit"];
 
 console.log(play_arr);
 
@@ -43,18 +43,18 @@ console.log(play_arr.sort());
 
 // console.log(play_arr);
 
-player_jersey=[];
+player_jersey = [];
 
-for(let i of play_arr){
-    jer_num=Math.floor(Math.random()*11)+1;
-    while(player_jersey.includes(jer_num)){
-        jer_num=Math.floor(Math.random()*11)+1;
+for (let i of play_arr) {
+    jer_num = Math.floor(Math.random() * 11) + 1;
+    while (player_jersey.includes(jer_num)) {
+        jer_num = Math.floor(Math.random() * 11) + 1;
     }
     console.log(`${i} - ${jer_num}`);
     player_jersey.push(jer_num);
 }
 
-play_arr_upper=[];
+play_arr_upper = [];
 console.log(player_jersey);
 
 
