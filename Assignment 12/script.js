@@ -72,19 +72,54 @@ function final_dashboard() {
     chosenShape.className = `${selectedShape}`;
 }
 
+function showNextButton() {
+    next.style.opacity = "1";
+    next.style.visibility = "visible";
+    next.style.cursor = "pointer";
+}
+
+function hideNextButton() {
+    next.style.opacity = "0";
+    next.style.visibility = "hidden";
+    next.style.cursor = "default";
+}
+
+function clearActiveTick() {
+    if (activeTick) {
+        activeTick.style.opacity = "0";
+        activeTick = null;
+    }
+}
+
+function restoreScreen(index) {
+    screen.forEach((s) => {
+        s.style.display = "none";
+        s.style.opacity = "0";
+    });
+
+    screen[index].style.display = "flex";
+    screen[index].style.opacity = "1";
+}
+
+function restoreShapeSelection() {
+    showNextButton();
+    shape.forEach((e, i) => {
+        if (e.classList[1] === selectedShape) {
+            tick[i].style.opacity = "1";
+            activeTick = tick[i];
+        }
+    });
+}
+
 shape.forEach((e, i) => {
     e.addEventListener("click", () => {
         const shapeName = e.classList[1];
         localStorage.setItem("selected_shape", shapeName);
         localStorage.setItem("current_screen", "1");
-        if (activeTick) {
-            activeTick.style.opacity = "0";
-        }
+        clearActiveTick();
         tick[i].style.opacity = "1";
         activeTick = tick[i];
-        next.style.opacity = "1";
-        next.style.visibility = "visible";
-        next.style.cursor = "pointer";
+        showNextButton();
     });
 });
 
@@ -107,13 +142,8 @@ calculate.addEventListener("click", () => {
 });
 
 startAgain.addEventListener("click", () => {
-    if (activeTick) {
-        activeTick.style.opacity = "0";
-        activeTick = null;
-    }
-    next.style.opacity = "0";
-    next.style.visibility = "hidden";
-    next.style.cursor = "default";
+    clearActiveTick();
+    hideNextButton();
     screen[2].style.opacity = "0";
     setTimeout(() => {
         screen[0].style.display = "block";
@@ -129,28 +159,16 @@ const currentScreen = localStorage.getItem("current_screen");
 const selectedShape = localStorage.getItem("selected_shape");
 
 if (currentScreen === "1") {
-    next.style.opacity = "1";
-    next.style.visibility = "visible";
-    next.style.cursor = "pointer";
-    shape.forEach((e, i) => {
-        if (e.classList[1] === selectedShape) {
-            tick[i].style.opacity = "1";
-            activeTick = tick[i];
-        }
-    });
+    restoreShapeSelection();
 }
 
 if (currentScreen === "2") {
-    screen[0].style.display = "none";
-    screen[1].style.display = "flex";
-    screen[1].style.opacity = "1";
+    restoreScreen(1);
     screen2Title.textContent = shapeProps[selectedShape].title;
     input.value = inputValue;
 }
 
 if (currentScreen === "3") {
-    screen[0].style.display = "none";
-    screen[2].style.display = "flex";
-    screen[2].style.opacity = "1";
+    restoreScreen(2);
     final_dashboard();
 }

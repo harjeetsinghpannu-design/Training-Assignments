@@ -12,9 +12,12 @@ const emailexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 let details = [];
 
-function createElementWithClass(tag, className) {
+function NewElement(tag, className, attributes={}) {
     const element = document.createElement(tag);
     element.className = className;
+    for(attr in attributes){
+        element.setAttribute(attr,attributes[attr]);
+    }
     return element;
 }
 
@@ -37,15 +40,13 @@ function emailExists(email) {
 }
 
 function contact_card(name, email, image) {
-    const card = createElementWithClass("div", "friend-card");
-    const friendImage = createElementWithClass("div", "friend-image");
-    const img = document.createElement("img");
-    img.src = image;
-    img.alt = "";
-    const friendDetails = createElementWithClass("div", "friend-details");
-    const friendName = createElementWithClass("h2", "friend-name");
+    const card = NewElement("div", "friend-card");
+    const friendImage = NewElement("div", "friend-image");
+    const img = NewElement("img","friend-image",{src:image, alt:"friend-image"});
+    const friendDetails = NewElement("div", "friend-details");
+    const friendName = NewElement("h2", "friend-name");
     friendName.textContent = name;
-    const friendEmail = createElementWithClass("p", "friend-email");
+    const friendEmail = NewElement("p", "friend-email");
     friendEmail.textContent = email;
     friendImage.append(img);
     friendDetails.append(friendName, friendEmail);
