@@ -93,12 +93,10 @@ function startTransaction() {
 
     if (operation === "withdraw") {
         updatedBalance = bank.withdraw(cardNo, pin, amount);
-        // console.log(`Amount has been withdrawn. Current balance is ${updatedBalance}`);
         alert(`Amount has been withdrawn. Current balance is ${updatedBalance}`);
     }
     else {
         updatedBalance = bank.deposit(cardNo, pin, amount);
-        // console.log(`Amount has been deposited. Current balance is ${updatedBalance}`);
         alert(`Amount has been deposited. Current balance is ${updatedBalance}`);
     }
 }

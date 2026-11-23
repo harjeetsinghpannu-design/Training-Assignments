@@ -136,6 +136,10 @@ input.addEventListener("input", () => {
 });
 
 calculate.addEventListener("click", () => {
+    if(!input.checkValidity()){
+        alert("Enter a value to proceed");
+        return
+    }
     showScreen(1, 2);
     localStorage.setItem("current_screen", "3");
     final_dashboard();
