@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pocket Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Lato:wght@300;400;400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/app.js"></script>
+    <!-- <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">
+            Pocket Notes
+        </h1>
+        <nav class="header-actions">
+            <button type="button" id="delete-all-btn" class="btn btn-delete-all">
+                DELETE ALL
+            </button>
+            <button type="button" id="new-note-btn" class="btn btn-primary">
+                NEW
+            </button>
+        </nav>
+    </header>
+
+    <main class="home-page">
+        <section id="empty-state" class="empty-state">
+            <div class="empty-state__content">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                </svg>
+
+                <p class="empty-state__text">
+                    Notes you add appear here
+                </p>
+            </div>
+        </section>
+
+        <section class="notes-section">
+            <div id="notes-grid" class="notes-grid"></div>
+            <div class="load-more-container">
+                <button type="button" class="btn btn-primary load-more-btn">
+                    LOAD MORE
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast-container"></div>
+    <div id="overlay" class="overlay"></div>
+    <aside id=note-modal class="side-modal note-modal">
+        <div class="modal-header">
+            <h2 class="modal-title">
+                NEW NOTE
+            </h2>
+            <button type="button" id="close-note-modal-btn" class="close-btn">
+                ×
+            </button>
+        </div>
+        <div class="modal-body">
+            <input required type="text" id="note-title" maxlength="100" placeholder="Notes Title" />
+            <input type="text" id="image-url" placeholder="Add Image URL" />
+            <textarea required id="note-content" placeholder="Add Content Here"></textarea>
+        </div>
+        <div class="modal-footer">
+            <div class="color-picker">
+                <button type="button" class="color-option selected" data-color="#DEC1EB"></button>
+                <button type="button" class="color-option" data-color="#FFFFFF"></button>
+                <button type="button" class="color-option" data-color="#F2C969"></button>
+                <button type="button" class="color-option" data-color="#D9E38C"></button>
+                <button type="button" class="color-option" data-color="#F4A88D"></button>
+            </div>
+            <button type="button" id="save-note-btn" class="btn btn-primary" disabled>
+                ADD
+            </button>
+        </div>
+    </aside>
+    <section id="delete-note-modal" class="dialog delete-note-modal">
+        <div class="dialog-header">
+            DELETE NOTE
+            <button type="button" id="close-note-modal-btn" class="close-btn">
+                ×
+            </button>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Are you sure you want to delete this note?
+            </p>
+            <button type="button" id="confirm-delete-btn" class="btn btn-primary confirm-delete-btn">
+                YES, DELETE
+            </button>
+        </div>
+    </section>
+
+    <section id="delete-all-modal" class="dialog delete-all-modal">
+        <div class="dialog-header">
+            DELETE ALL NOTES
+            <button type="button" id="close-delete-all-modal-btn" class="close-btn">
+                ×
+            </button>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Are you sure you want to delete all notes?
+            </p>
+            <button type="button" id="confirm-delete-all-btn" class="btn btn-primary confirm-delete-all-btn">
+                YES, DELETE
+            </button>
+        </div>
+    </section>
+
+    <section id="confirm-modal" class="dialog confirm-modal">
+        <div class="dialog-header">
+            CONFIRM
+            <button type="button" class="close-btn">
+                ×
+            </button>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Seems like you are in the middle of
+                adding/editing content.
+                Do you want to leave?
+            </p>
+            <button type="button" id="confirm-close-btn" class="btn btn-primary confirm-close-btn">
+                YES, CLOSE
+            </button>
+        </div>
+    </section>
+
+</body>
+
+</html>

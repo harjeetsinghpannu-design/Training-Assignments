@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pocket Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/detail.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="detail-header-left">
+            <button type="button" id="back-btn" class="back-btn">
+                ←
+            </button>
+            <h1 class="logo">
+                Pocket Notes
+            </h1>
+        </div>
+        <div class="header-actions">
+            <button type="button" id="delete-btn" class="btn btn-danger">
+                DELETE
+            </button>
+            <button type="button" id="edit-btn" class="btn btn-primary">
+                EDIT
+            </button>
+        </div>
+    </header>
+
+    <main class="detail-page">
+        <article class="note-detail">
+            <div class="note-detail-header">
+                <span id="note-indicator" class="note-indicator"></span>
+                <div class="note-meta">
+                    <h2 id="detail-title" class="note-detail-title"></h2>
+                    <p id="detail-date" class="note-detail-date"></p>
+                </div>
+            </div>
+            <img src="" alt="Note Image" id="detail-image" class="note-detail-image" />
+            <div id="detail-content" class="note-detail-content"></div>
+        </article>
+    </main>
+
+    <div id="overlay" class="overlay"></div>
+    <div id="delete-note-modal" class="dialog">
+        <div class="dialog-header">
+            <h3>DELETE NOTE</h3>
+            <button type="button" id="close-delete-modal">
+                ×
+            </button>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Are you sure you want
+                to delete this note?
+            </p>
+            <button type="button" id="confirm-delete-note" class="btn btn-primary">
+                YES, DELETE
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
