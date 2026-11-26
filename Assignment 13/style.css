@@ -1,28 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
 
-
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "Roboto", sans-serif;
 }
 
-header{
+header {
     background-color: #3b1c67;
     position: relative;
 }
 
-header h1{
+header h1 {
     font-size: 20px;
     font-weight: 300;
     padding: 20px;
-    color: white;
+    color: #ffffff;
 }
 
-.add-btn{
+.add-btn {
     position: absolute;
     top: 13px;
     right: 20px;
@@ -34,12 +34,12 @@ header h1{
     border-style: none;
 }
 
-.dialog{
+.dialog {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
     border: 1px solid #ccc;
     display: none;
@@ -47,38 +47,45 @@ header h1{
     gap: 10px;
 }
 
-.friends-list-wrapper{
-    margin: 40px auto;
+.friends-list-wrapper {
+    margin: 40px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    width: fit-content;
 }
 
-.friend-card{
+.friend-card {
     background-color: #4d66b4;
-    width: 360px;
-    height: 55px;
+    /* width: calc((100%-10px)/3); */
+    height: 70px;
     font-size: 14px;
     padding: 10px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    color: white;
+    gap: 10px;
+    color: #ffffff;
     font-weight: 100;
+    min-width: 0;
 }
 
-.friend-image img{
+.friend-image img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
-.friend-name{
-    font-size: 14px;
-    font-weight: 400;
+.friend-details {
+    min-width: 0;
 }
 
-.friend-email{
-    font-size: 10px;
+.friend-name {
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.friend-email {
+    font-size: 12px;
 }

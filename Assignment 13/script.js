@@ -1,90 +1,102 @@
-let friend_list = document.querySelector(".friends-list-wrapper");
+const friend_list = document.querySelector(".friends-list-wrapper");
+const add_btn = document.querySelector(".add-btn");
+const create_btn = document.querySelector(".create-btn");
+const close_btn = document.querySelector(".close-btn");
+const dialog_box = document.querySelector(".dialog");
+const first_name_input = document.querySelector(".friend-first-name-input");
+const last_name_input = document.querySelector(".friend-last-name-input");
+const email_input = document.querySelector(".friend-email-input");
+const image_input = document.querySelector(".friend-image-input");
 
-// let friend_name = document.querySelector(".friend-name");
+const emailexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// let friend_email = document.querySelector(".friend-email");
+let details = [];
 
-let add_btn=document.querySelector(".add-btn");
-
-let create_btn=document.querySelector(".create-btn");
-
-let close_btn=document.querySelector(".close-btn");
-
-let dialog_box=document.querySelector(".dialog");
-
-let name_input=document.querySelector(".friend-name-input");
-
-let email_input=document.querySelector(".friend-email-input");
-
-let image_input=document.querySelector(".friend-image-input");
-
-let emailexp=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-function contact_card(name,email,image){
-    let div=document.createElement("div");
-    div.className="friend-card";
-    friend_list.append(div);
-    let html=`<div class="friend-image">
-                    <img src="${image}" alt="">
-                </div>
-                <div class="friend-details">
-                    <h2 class="friend-name">${name}</h2>
-                    <p class="friend-email">${email}</p>
-                </div>`
-    div.innerHTML=html;
+function NewElement(tag, className, attributes={}) {
+    const element = document.createElement(tag);
+    element.className = className;
+    for(attr in attributes){
+        element.setAttribute(attr,attributes[attr]);
+    }
+    return element;
 }
 
-async function getData(){
+function isValidEmail(email) {
+    return emailexp.test(email);
+}
+
+function showDialog() {
+    dialog_box.style.display = "flex";
+}
+
+function hideDialog() {
+    dialog_box.style.display = "none";
+}
+
+function emailExists(email) {
+    return details.some(
+        friend => friend.email === email
+    );
+}
+
+function contact_card(name, email, image) {
+    const card = NewElement("div", "friend-card");
+    const friendImage = NewElement("div", "friend-image");
+    const img = NewElement("img","friend-image",{src:image, alt:"friend-image"});
+    const friendDetails = NewElement("div", "friend-details");
+    const friendName = NewElement("h2", "friend-name");
+    friendName.textContent = name;
+    const friendEmail = NewElement("p", "friend-email");
+    friendEmail.textContent = email;
+    friendImage.append(img);
+    friendDetails.append(friendName, friendEmail);
+    card.append(friendImage, friendDetails);
+    return card;
+}
+
+function renderFriends(friends) {
+    const fragment = document.createDocumentFragment();
+    friends.forEach(friend => {
+        const card = contact_card(friend.first_name + " " + friend.last_name, friend.email, friend.img);
+        fragment.append(card);
+    });
+    friend_list.append(fragment);
+}
+
+function addFriend() {
+    if (!isValidEmail(email_input.value)) {
+        alert("Enter a valid Email ID");
+        return;
+    }
+    if (emailExists(email_input.value)) {
+        alert("Email ID already exists");
+        return;
+    }
+    const fullName = first_name_input.value + " " + last_name_input.value;
+    const card = contact_card(fullName, email_input.value, image_input.value);
+    friend_list.append(card);
+    details.push({
+        first_name: first_name_input.value,
+        last_name: last_name_input.value,
+        email: email_input.value,
+        img: image_input.value
+    });
+    hideDialog();
+}
+
+async function getData() {
     const response = await fetch("friends.json");
-    
     const data = await response.json();
     return data;
 }
 
-let details=0;
-
-async function main(){
+async function main() {
     details = await getData();
-    details.forEach(e => {
-        let name=e.first_name+" "+e.last_name
-        contact_card(name,e.email,e.img);
-    });
+    renderFriends(details);
 }
 
 main();
 
-add_btn.addEventListener("click",()=>{
-    dialog_box.style.display="flex";
-})
-
-create_btn.addEventListener("click",()=>{
-    if(!emailexp.test(email_input.value)){
-        alert("Enter a valid Email ID");
-        return;
-    }
-    let all_friend_emails=document.querySelectorAll(".friend-email")
-    let duplicate=false;
-    for (const em of all_friend_emails) {
-        if(em.textContent===email_input.value){
-            duplicate=true;
-            break;
-        }
-    }
-    if(duplicate){
-        alert("Email ID already exists");
-        return;
-    }
-    contact_card(name_input.value, email_input.value, image_input.value);
-})
-
-close_btn.addEventListener("click",()=>{
-    dialog_box.style.display="none";
-})
-
-
-
-
-
-
-
-
+add_btn.addEventListener("click", showDialog);
+create_btn.addEventListener("click", addFriend);
+close_btn.addEventListener("click", hideDialog);
