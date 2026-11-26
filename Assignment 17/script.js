@@ -61,9 +61,8 @@ solutions_headings.each(function (index) {
 });
 
 function NewElement(tag, className, attributes = {}) {
-
     const element = $("<" + tag + ">");
-
+    
     element.addClass(className);
 
     for (const attr in attributes) {
@@ -74,7 +73,6 @@ function NewElement(tag, className, attributes = {}) {
 }
 
 function getFlag(country) {
-
     const flags = {
         "India": "in",
         "United States": "us",
@@ -85,9 +83,7 @@ function getFlag(country) {
 }
 
 function createLocationCard(location) {
-
     const card = NewElement("div", "location-card");
-
     const flag = NewElement("img", "flag", {
         src: getFlag(location.country),
         alt: location.country
@@ -126,7 +122,7 @@ async function main() {
 
     renderLocations(locations);
 
-    showSection(about_section);
+    // showSection(about_section);
 }
 
 main();
